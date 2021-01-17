@@ -1,0 +1,34 @@
+ALGORITHM Sum-distinct
+VAR
+    set1, set2: ARRAY_OF integer[5];
+    s, j, i : INTEGER;
+BEGIN
+i:=0;
+j:=0;
+s:=0;
+FOR i FROM 0 TO 5 DO
+       Read(set1[i]);
+   END_FOR
+
+FOR j FROM 0 TO 5 DO
+       Read(set2[j]);
+   END_FOR
+
+FOR i FROM 0 TO 5 DO
+    IF (set2[j]!=set1[i]) THEN
+        s:=s+set2[j];
+    ELSE
+       j:=j+1; 
+    END_IF
+    END_FOR
+
+FOR j FROM 0 TO 5 DO
+    IF (set1[i]:=set2[j]) THEN
+    s:=s+set1[i];
+    ELSE
+    i:=i+1;
+    END_IF
+END_FOR
+Write(s);
+
+END
